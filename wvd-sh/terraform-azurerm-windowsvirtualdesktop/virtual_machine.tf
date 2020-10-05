@@ -1,3 +1,4 @@
+
 resource "random_string" "wvd-local-password" {
   count            = "${var.rdsh_count}"
   length           = 16

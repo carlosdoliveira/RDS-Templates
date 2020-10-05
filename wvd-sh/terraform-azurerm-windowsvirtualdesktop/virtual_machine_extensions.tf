@@ -1,3 +1,5 @@
+
+
 resource "azurerm_virtual_machine_extension" "LogAnalytics" {
   count                      = "${var.extension_loganalytics ? var.rdsh_count : 0}"
   name                       = "${var.vm_prefix}${count.index +1}-LogAnalytics"
@@ -8,6 +10,7 @@ resource "azurerm_virtual_machine_extension" "LogAnalytics" {
   type                       = "MicrosoftMonitoringAgent"
   type_handler_version       = "1.0"
   auto_upgrade_minor_version = true
+  
 
   settings = <<SETTINGS
 	{
